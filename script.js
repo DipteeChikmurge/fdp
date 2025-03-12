@@ -1,20 +1,21 @@
-// Show alert when button is clicked
-function showAlert() {
-    alert("Welcome to My Website!");
+function openTab(evt, tabName) {
+    let i, tabcontent, tablinks;
+    
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
 }
 
-// Handle form submission
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    if (name && email && message) {
-        alert(`Thank you, ${name}! We have received your message.`);
-        document.getElementById("contactForm").reset();
-    } else {
-        alert("Please fill in all fields.");
-    }
+// Open the first tab by default
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".tablink").click();
 });

@@ -1,19 +1,96 @@
-<script>
-    function openTab(evt, tabName) {
-        let i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active");
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diptee Ghusse - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector(".tablink").click();
-    });
-</script>
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tablink").click();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dr. Diptee Ghusse (Chikmurge)</h1>
+        <p>Head of Department, CSE-AIML, MIT Academy of Engineering, Pune</p>
+        <p>Email: <a href="mailto:diptee.chikmurge@mitaoe.ac.in">diptee.chikmurge@mitaoe.ac.in</a></p>
+        <p>Orcid: <a href="https://orcid.org/0000-0002-0712-9769" target="_blank">0000-0002-0712-9769</a></p>
+
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'research')">Research Domain</button>
+            <button class="tablink" onclick="openTab(event, 'projects')">Projects Completed</button>
+            <button class="tablink" onclick="openTab(event, 'skills')">Technical Skills</button>
+            <button class="tablink" onclick="openTab(event, 'awards')">Awards & Recognition</button>
+            <button class="tablink" onclick="openTab(event, 'responsibility')">Academic Responsibilities</button>
+        </div>
+
+        <div id="research" class="tabcontent">
+            <h2>Research Domain</h2>
+            <ul>
+                <li>Machine Learning, Deep Learning, Computer Vision</li>
+                <li>Quantum Neural Networks, Soft Computing</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tabcontent">
+            <h2>Projects Completed</h2>
+            <ul>
+                <li>Fog removal using GAN model</li>
+                <li>Handwriting recognition using self-attention mechanism</li>
+                <li>Restaurant reviews analysis using deep learning</li>
+                <li>Electric vehicle power consumption prediction</li>
+                <li>Object measurement using computer vision tools</li>
+                <li>Video and Image Captioning</li>
+            </ul>
+        </div>
+
+        <div id="skills" class="tabcontent">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Python, C, C++ Programming</li>
+                <li>TensorFlow, Power BI, RAG, LLM</li>
+                <li>Anaconda, Jupyter</li>
+                <li>Oracle Database</li>
+            </ul>
+        </div>
+
+        <div id="awards" class="tabcontent">
+            <h2>Awards & Recognition</h2>
+            <ul>
+                <li>Visiting Professor at UMA, Lima, Peru (2025)</li>
+                <li>Best Teacher Award (2016)</li>
+            </ul>
+        </div>
+
+        <div id="responsibility" class="tabcontent">
+            <h2>Academic Roles & Responsibilities</h2>
+            <ul>
+                <li>Innovative teaching methods and assessments</li>
+                <li>Syllabus design for AI, ML, Computer Vision</li>
+                <li>Organizer of national conferences and project competitions</li>
+                <li>Reviewer in international conferences</li>
+                <li>Industry project mentor</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

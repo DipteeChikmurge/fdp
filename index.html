@@ -1,51 +1,99 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
+    <title>Diptee Ghusse - Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.style.backgroundColor = "#575757";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tablink").click();
+        });
+    </script>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <h1>My Website</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home">
-        <div class="hero">
-            <h2>Welcome to My Website</h2>
-            <p>Building a better web experience</p>
-            <button onclick="showAlert()">Get Started</button>
+    <div class="container">
+        <h1>Diptee Ghusse</h1>
+        <p>HoD, CSE-AIML, MIT Academy of Engineering</p>
+        <p>Email: <a href="mailto:diptee.chikmurge@mitaoe.ac.in">diptee.chikmurge@mitaoe.ac.in</a></p>
+        <p>ORCID: <a href="https://orcid.org/0000-0002-0712-9769" target="_blank">0000-0002-0712-9769</a></p>
+        
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'research')">Research</button>
+            <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tablink" onclick="openTab(event, 'awards')">Awards</button>
+            <button class="tablink" onclick="openTab(event, 'skills')">Skills</button>
+            <button class="tablink" onclick="openTab(event, 'training')">Training</button>
+            <button class="tablink" onclick="openTab(event, 'roles')">Academic Roles</button>
+            <button class="tablink" onclick="openTab(event, 'contribution')">Research Contribution</button>
         </div>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We create beautiful and functional websites with modern technologies.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2025 My Website. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        
+        <div id="research" class="tabcontent">
+            <h2>Research Domain</h2>
+            <p>Machine Learning, Deep Learning, Computer Vision, Quantum Neural Network, Soft Computing</p>
+        </div>
+        
+        <div id="projects" class="tabcontent">
+            <h2>Projects Completed</h2>
+            <ul>
+                <li>Fog removal using GAN model</li>
+                <li>Handwriting recognition using self-attention mechanism</li>
+                <li>Restaurant reviews analysis using deep learning</li>
+                <li>Electrical vehicle power consumption prediction</li>
+                <li>DICOM medical image classification</li>
+            </ul>
+        </div>
+        
+        <div id="awards" class="tabcontent">
+            <h2>Awards & Recognition</h2>
+            <p>Visiting Professor at University of Maria Auxiliadora, Lima, Peru (2025)</p>
+            <p>Best Teacher Award - 2016</p>
+        </div>
+        
+        <div id="skills" class="tabcontent">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Anaconda, Jupyter</li>
+                <li>Power BI, TensorFlow, RAG, LLM</li>
+                <li>Python, C, C++</li>
+                <li>Oracle Database</li>
+            </ul>
+        </div>
+        
+        <div id="training" class="tabcontent">
+            <h2>Training Conducted</h2>
+            <p>10-day faculty training on Gen-AI in teaching-learning process for UMA, Peru.</p>
+        </div>
+        
+        <div id="roles" class="tabcontent">
+            <h2>Academic Roles & Responsibilities</h2>
+            <ul>
+                <li>Innovative teaching methods</li>
+                <li>Innovative assessment for AIML courses</li>
+                <li>Organizer of national conferences</li>
+                <li>Industry visits to LTI Mindtree Pune</li>
+            </ul>
+        </div>
+        
+        <div id="contribution" class="tabcontent">
+            <h2>Research Contribution</h2>
+            <p>Publications: 3 SCI journals, 18 Scopus Conference papers, 2 Book Chapters</p>
+        </div>
+    </div>
 </body>
 </html>
